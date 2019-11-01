@@ -4,7 +4,7 @@ import './App.scss';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './pages/Home.jsx';
-import PokemonDetail from './pages/PokemonDetail.jsx';
+import PokemonDetail from './pages/PokemonDetail/PokemonDetail.jsx';
 
 function App() {
   return (
