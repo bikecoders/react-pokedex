@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchPokemons } from '../store/pokemons/actions';
 import PropTypes from 'prop-types';
+
+import { Card, CardTitle, Media, MediaOverlay } from 'react-md';
+
+import { fetchPokemons } from '../store/pokemons/actions';
 
 function PokemonList({ pokemons, fetchPokemons }) {
   useEffect(() => {
@@ -9,11 +12,24 @@ function PokemonList({ pokemons, fetchPokemons }) {
   }, []);
 
   return (
-    <>
-      {pokemons.map(pokemon => (
-        <p key={pokemon.name}>{pokemon.name}</p>
+    <div className="md-grid">
+      {pokemons.map(pok => (
+        <Card
+          key={pok.name}
+          className="cards__example md-cell md-cell--6 md-cell--8-tablet"
+        >
+          <Media>
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
+              alt={pok.name}
+            />
+            <MediaOverlay>
+              <CardTitle title={pok.name}></CardTitle>
+            </MediaOverlay>
+          </Media>
+        </Card>
       ))}
-    </>
+    </div>
   );
 }
 
