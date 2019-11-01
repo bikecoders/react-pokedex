@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { Card, CardTitle, Media, MediaOverlay } from 'react-md';
+import { Button, Card, CardTitle, Media, MediaOverlay } from 'react-md';
 
 function PokemonCard({ pokemon }) {
   return (
@@ -12,7 +13,11 @@ function PokemonCard({ pokemon }) {
       <Media>
         <img src={pokemon.sprites.front_default} alt={pokemon.name} />
         <MediaOverlay>
-          <CardTitle title={pokemon.name}></CardTitle>
+          <CardTitle title={pokemon.name}>
+            <Link className="md-cell--right" to={`pokemon/${pokemon.id}`}>
+              <Button icon>info</Button>
+            </Link>
+          </CardTitle>
         </MediaOverlay>
       </Media>
     </Card>
