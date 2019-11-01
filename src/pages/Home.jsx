@@ -5,8 +5,7 @@ import PokemonList from '../components/PokemonList.jsx';
 function Home() {
   return (
     <>
-      <span>home works</span>
-      <br />
+      <h1>React Pokedex</h1>
       <PokemonList></PokemonList>
     </>
   );
